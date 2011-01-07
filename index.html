@@ -1,0 +1,48 @@
+<html>
+<head>
+	<title>JQuery Paginate Carousel</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<script type="text/javascript" src="js/jquery-1.4.4.min.js"></script>
+	<script type="text/javascript" src="js/jquery.paginate.js"></script>
+	<script type="text/javascript">
+			$(document).ready(function() {
+				$('#container').paginate({ buttonMargin: '5px', buttonSize: '8px' });
+				$('#vertical').paginate({ vertical: true, buttonMargin: '5px', buttonSize: '8px' });
+			});
+	</script>
+	<style type="text/css" media="screen">
+		ul, li { padding: 0px; list-style: none; }
+		#container, #vertical { width: 240px; height: 170px; }
+	</style>
+</head>
+<body>
+
+	<h3>Demo Horizontal</h3>
+	<div id="container">
+		<ul>
+			<li><img src="img/img1.png"></li>
+			<li><img src="img/img2.png"></li>
+			<li><img src="img/img3.png"></li>
+			<li><img src="img/img4.png"></li>
+			<li><img src="img/img1.png"></li>
+			<li><img src="img/img2.png"></li>
+			<li><img src="img/img3.png"></li>
+			<li><img src="img/img4.png"></li>
+			<li><img src="img/img1.png"></li>
+			<li><img src="img/img2.png"></li>
+		</ul>
+	</div>
+
+	<h3>Demo Vertical</h3>
+	<div id="vertical">
+		<ul>
+			<li><img src="img/img1.png"></li>
+			<li><img src="img/img2.png"></li>
+			<li><img src="img/img3.png"></li>
+			<li><img src="img/img4.png"></li>
+				<li><img src="img/img1.png"></li>
+				<li><img src="img/img2.png"></li>
+		</ul>
+	</div>
+</body>
+</html>
