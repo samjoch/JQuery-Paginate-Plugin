@@ -2,7 +2,7 @@
 /*
  *	jQuery Paginate plugin version 0.1
  *
- *	Samuel JOCHIMEK - http://teddevito.com/demos/textarea.html
+ *	Samuel JOCHIMEK - http://guiora.com
  *
  *	Copyright (c) 2011 Samuel JOCHIMEK
  *
