@@ -75,8 +75,22 @@
 		return this.each(function(container_index) {
 			
 			var elem = $(this);
+			elem.append('<div class="spinner"></div>');
 			
-			elem.find('img').hide().load(function(){ $(this).fadeIn(); });
+			$('#page .diaporama .spinner')
+				.css('position', 'absolute')
+				.css('background', 'rgba(0,0,0,0.4)')
+				.css('width', elem.width()+'px')
+				.css('height', elem.height()+'px')
+				.css('color', 'white')
+				.css('line-height', elem.height()+'px')
+				.css('text-align', 'center')
+				.css('z-index', '9999').html('...');
+				
+			elem.find('img').hide().load(function(){ 
+				$('#page .diaporama .spinner').fadeOut();
+				$(this).fadeIn(); 
+			});
 			
 			var items_selector = options.tagContainer+':first>'+options.tagItem;
 			var items = elem.find(items_selector);
