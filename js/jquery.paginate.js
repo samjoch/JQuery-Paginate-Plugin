@@ -90,7 +90,7 @@
 			elem.find('img').hide().load(function(){ 
 				$('#page .diaporama .spinner').fadeOut();
 				$(this).fadeIn();
-				$(this).find('.'+options.buttonContainer).fadeIn();
+				elem.find('.'+options.buttonContainer).fadeIn();
 			});
 			
 			var items_selector = options.tagContainer+':first>'+options.tagItem;
