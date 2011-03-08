@@ -75,6 +75,9 @@
 		return this.each(function(container_index) {
 			
 			var elem = $(this);
+			
+			elem.find('img').hide().load(function(){ $(this).fadeIn(); });
+			
 			var items_selector = options.tagContainer+':first>'+options.tagItem;
 			var items = elem.find(items_selector);
 
@@ -83,7 +86,7 @@
 			if( has_many_items ) {
 				elem.append('<ul class="'+options.buttonContainer+'"></ul>');
 				var ctrl = elem.find('.'+options.buttonContainer);
-				
+			
 				items.each(function(){
 					ctrl.append('<li><a href="'+$(this).index()+'"></a></li>');
 				});
@@ -128,15 +131,17 @@
 				.hover(function(){ $(this).css('cursor', 'hand') })
 				.click(function(){
 					$('#paginate-zoom').remove();
-					$('<img id="paginate-zoom"/>').appendTo('body');
-					$('#paginate-zoom')
+					var img = new Image();
+					$(img)
+						.attr('id', 'paginate-zoom')
 						.click(function(){ $(this).fadeOut(); })
 						.hover(function(){ $(this).css('cursor', 'hand') })
+						.appendTo('body');
 					if( $('#paginate-zoom').attr('src') != $(this).attr('title') ) {
 						var offset = $(this).offset(),
 								width = $(this).width(), 
 								height = $(this).height();
-						$('#paginate-zoom')
+						$(img)
 							.hide()
 							.attr('src', $(this).attr('title'))
 							.css('-webkit-box-shadow', '1px 1px 8px #666')
@@ -147,6 +152,7 @@
 								var o_width = $(this).width(),
 										o_height = $(this).height()
 								$(this)
+									.append('body')
 									.css('position', 'absolute')
 									.css(offset)
 									.width(width)
