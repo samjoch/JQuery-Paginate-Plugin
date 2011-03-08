@@ -85,11 +85,12 @@
 				.css('color', 'white')
 				.css('line-height', elem.height()+'px')
 				.css('text-align', 'center')
-				.css('z-index', '9999').html('...');
+				.css('z-index', '9999');
 				
 			elem.find('img').hide().load(function(){ 
 				$('#page .diaporama .spinner').fadeOut();
-				$(this).fadeIn(); 
+				$(this).fadeIn();
+				$(this).find('.'+options.buttonContainer).fadeIn();
 			});
 			
 			var items_selector = options.tagContainer+':first>'+options.tagItem;
@@ -100,7 +101,8 @@
 			if( has_many_items ) {
 				elem.append('<ul class="'+options.buttonContainer+'"></ul>');
 				var ctrl = elem.find('.'+options.buttonContainer);
-			
+				ctrl.hide();
+				
 				items.each(function(){
 					ctrl.append('<li><a href="'+$(this).index()+'"></a></li>');
 				});
